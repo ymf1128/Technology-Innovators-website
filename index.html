@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <!-- CSS -->
+    <link href="header.css" rel="stylesheet" />
+    <link href="footer.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a href="#" style="text-decoration: none">
+            <h2 class="text-gray text-capitalize">
+              Utar<span class="text-color">Tech</span>
+            </h2>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="trends.html">Trends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reviews.html">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Apple</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cybersecurity</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">AI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Contact Us</a>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-brand">Login</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 20px; left: 0; width: 100%; background-color: #333; color: white; padding: 15px 20px; text-align: center;">
+      We use cookies to improve your experience. By using this site, you agree to our use of cookies.
+      <button id="accept-cookies" style="background-color: #4CAF50; border: none; color: white; padding: 10px 20px; cursor: pointer; margin-left: 20px;">Accept</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2 class="footer-logo">Utar<span>Tech</span></h2>
+          <p class="footer-address">Jalan Universiti, 31900 Kampar, Perak</p>
+          <p class="footer-phone">+88 8888 8888</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-twitter fa-lg"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-linkedin-in fa-lg"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-github fa-lg"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="#">Online Support</a></li>
+              <li><a href="#">Business Cooperation</a></li>
+              <li><a href="#">Join Our Team</a></li>
+              <li><a href="#">Media Inquiries</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript to Handle Cookies -->
+    <script>
+      // Function to set a cookie
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time in days
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Set the cookie
+      }
+
+      // Function to get a cookie
+      function getCookie(name) {
+        const nameEq = name + "=";
+        const cookies = document.cookie.split(";");
+        
+        for (let i = 0; i < cookies.length; i++) {
+          let c = cookies[i];
+          while (c.charAt(0) == " ") c = c.substring(1, c.length); // Trim spaces
+          if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length); // Return cookie value
+        }
+        return "";
+      }
+
+      // Show the cookie consent banner if the user hasn't accepted cookies yet
+      if (getCookie("cookiesAccepted") != "true") {
+        document.getElementById("cookie-consent-banner").style.display = "block"; // Show banner
+      }
+
+      // Handle the "Accept" button click
+      document.getElementById("accept-cookies").onclick = function() {
+        setCookie("cookiesAccepted", "true", 30); // Set the cookie for 30 days
+        document.getElementById("cookie-consent-banner").style.display = "none"; // Hide the banner
+      };
+    </script>
+
+
+    <!-- JavaScript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>
