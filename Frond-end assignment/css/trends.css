@@ -1,0 +1,186 @@
+/* General Body Styles */
+body {
+  background: linear-gradient(to right, #8e9eab, #eef2f3); /* Light gradient background */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+  padding-top: 80px; /* accounts for fixed navbar */
+}
+
+/* Header Section for Reviews and Trends */
+.reviews-header, .trends-header {
+  background: #006400; /* Dark Green */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.reviews-header .header-title, .trends-header .header-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.reviews-header .header-description, .trends-header .header-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Main Trends Section */
+.trends-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.trends-section h1 {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 2.8rem;
+  color: #203a43;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Text shadow */
+}
+
+/* Trend Card Styling */
+.trend-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+.trend-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trend-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Image Styling */
+.trend-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.trend-card img:hover {
+  transform: scale(1.05); /* Zoom in effect */
+}
+
+/* Trend Tags */
+.tag {
+  display: inline-block;
+  margin: 15px 20px 5px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+}
+
+.tag.ai {
+  background-color: #333; /* Dark background for AI */
+}
+
+.tag.cybersecurity {
+  background-color: #3b5323; /* Green shade for Cybersecurity */
+}
+
+.tag.apple {
+  background-color: #222; /* Dark for Apple */
+}
+
+/* Trend Info Text */
+.trend-card h2 {
+  font-size: 1.5rem;
+  margin: 10px 20px;
+  color: #203a43;
+}
+
+.trend-card p {
+  margin: 0 20px 10px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #006400; /* Dark Green */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px; /* Rounded corners */
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  margin: 10px 20px;
+}
+
+.btn:hover {
+  background-color: #4caf50; /* Lighter Green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 15px rgba(0, 100, 0, 0.3); /* Subtle shadow effect */
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #203a43;
+  color: white;
+  padding: 60px 20px;
+}
+
+.footer .footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer .footer-social {
+  margin-top: 20px;
+}
+
+.footer .social-link {
+  color: white;
+  margin: 0 10px;
+}
+
+.footer .footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer .footer-column ul {
+  padding-left: 20px;
+}
+
+.footer .footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer .footer-column ul li a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer .footer-column ul li a:hover {
+  color: #fff;
+}
